@@ -1,8 +1,8 @@
 import arrow_icon from "./arrow_icon.svg";
 import arrow_icon_dull from "./arrow_icon_dull.svg";
 import logo_text from "./logo_text.svg";
-import logo_icon from "./logo_icon.svg";
-import logo_icon2 from "./logo-icon2.png";
+import logo_icon from "./N.svg";
+import logo_icon2 from "./nexora3.svg";
 import menu_icon from "./menu_icon.svg";
 import search_icon from "./search_icon.svg";
 import profile_icon from "./profile_icon.svg";
@@ -23,6 +23,7 @@ import chat_icon_dull from "./chat_icon_dull.svg";
 import qrcode from "./qrcode.png";
 import three_dots from "./three_dots.svg";
 import new_icon from "./new_icon.svg";
+
 
 export const assets = {
   arrow_icon,

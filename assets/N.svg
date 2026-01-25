@@ -1,0 +1,15 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chromeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6d7076"></stop>
+      <stop offset="20%" stop-color="#b1b4ba"></stop>
+      <stop offset="40%" stop-color="#f7f8fa"></stop>
+      <stop offset="50%" stop-color="#ffffff"></stop>
+      <stop offset="60%" stop-color="#f7f8fa"></stop>
+      <stop offset="80%" stop-color="#b1b4ba"></stop>
+      <stop offset="100%" stop-color="#6d7076"></stop>
+    </linearGradient>
+  </defs>
+
+  <path d="M20 62 V18 L55 62 V18" fill="none" stroke="url(#chromeGradient)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>

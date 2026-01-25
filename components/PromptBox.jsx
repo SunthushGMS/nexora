@@ -119,7 +119,7 @@ const PromptBox = ({setIsLoading, isLoading}) => {
         </div>
         <div className='flex items-center gap-2'>
           <Image src={assets.pin_icon} alt='' className='w-4 cursor-pointer'/>
-          <button className={`${prompt ? "bg-primary" : "bg-[#71717a]"} rounded-full p-2 cursor-pointer`}>
+          <button className={`${prompt ? "bg-green-500" : "bg-[#71717a]"} rounded-full p-2 cursor-pointer`}>
             <Image src={prompt ? assets.arrow_icon : assets.arrow_icon_dull} alt='' className='w-3.5 aspect-square'/>
           </button>
         </div>
