@@ -104,23 +104,50 @@ const PromptBox = ({setIsLoading, isLoading}) => {
         }
 
   return (
-    <form onSubmit={sendPrompt} className={`w-full ${selectedChat?.messages.length > 0 ? 'max-w-3xl' : 'max-w-2xl'} bg-[#404045] p-4 rounded-3xl mt-4 transition-all`}>
-      <textarea onKeyDown={handleKeyDown} onChange={(e)=> setPrompt(e.target.value)} value={prompt} rows={2} placeholder='Message Nexora' required className='outline-none w-full resize-none overflow-hidden break-words bg-transparent'/>
-      <div className='flex items-center justify-between text-sm'>
+    <form
+      onSubmit={sendPrompt}
+      className={`group w-full ${selectedChat?.messages.length > 0 ? 'max-w-3xl' : 'max-w-2xl'} p-4 rounded-[1.75rem] mt-4 transition-all duration-300 border border-white/[0.08] hover:border-white/[0.14] focus-within:border-white/20 shadow-[0_8px_30px_rgba(0,0,0,0.4)]`}
+      style={{
+        background: 'linear-gradient(180deg, #18181b 0%, #131316 100%)',
+      }}
+    >
+      <textarea
+        onKeyDown={handleKeyDown}
+        onChange={(e)=> setPrompt(e.target.value)}
+        value={prompt}
+        rows={2}
+        placeholder='Message Nexora'
+        required
+        className='outline-none w-full resize-none overflow-hidden break-words bg-transparent text-white/90 placeholder:text-white/30 text-[15px] tracking-wide'
+      />
+      <div className='flex items-center justify-between text-sm mt-1'>
         <div className='flex items-center gap-2'>
-          <p className='flex items-center gap-2 text-xs border border-gray-300/40 px-2 py-1 rounded-full cursor-pointer hover:bg-gray-500/20 transition'>
-            <Image src={assets.deepthink_icon} alt='' className='h-5'/>
+          <p className='flex items-center gap-2 text-xs border border-white/10 px-3 py-1.5 rounded-full cursor-pointer hover:border-white/25 hover:bg-white/[0.05] transition-all duration-200 text-white/65'>
+            <Image src={assets.deepthink_icon} alt='' className='h-4 opacity-80'/>
             NexBrain (R1)
           </p>
-           <p className='flex items-center gap-2 text-xs border border-gray-300/40 px-2 py-1 rounded-full cursor-pointer hover:bg-gray-500/20 transition'>
-            <Image src={assets.search_icon} alt='' className='h-5'/>
+           <p className='flex items-center gap-2 text-xs border border-white/10 px-3 py-1.5 rounded-full cursor-pointer hover:border-white/25 hover:bg-white/[0.05] transition-all duration-200 text-white/65'>
+            <Image src={assets.search_icon} alt='' className='h-4 opacity-80'/>
             Search (R1)
           </p>
         </div>
-        <div className='flex items-center gap-2'>
-          <Image src={assets.pin_icon} alt='' className='w-4 cursor-pointer'/>
-          <button className={`${prompt ? "bg-green-500" : "bg-[#71717a]"} rounded-full p-2 cursor-pointer`}>
-            <Image src={prompt ? assets.arrow_icon : assets.arrow_icon_dull} alt='' className='w-3.5 aspect-square'/>
+        <div className='flex items-center gap-3'>
+          <Image src={assets.pin_icon} alt='' className='w-4 cursor-pointer opacity-50 hover:opacity-80 transition-opacity'/>
+          <button
+            className={`rounded-full p-2.5 cursor-pointer transition-all duration-300 disabled:cursor-not-allowed ${prompt ? 'shadow-[0_0_16px_rgba(255,255,255,0.15)]' : ''}`}
+            style={{
+              background: prompt
+                ? 'linear-gradient(135deg, #f0f0f0 0%, #c4c4c8 50%, #e8e8e8 100%)'
+                : 'rgba(255,255,255,0.06)',
+              border: prompt ? 'none' : '1px solid rgba(255,255,255,0.08)',
+            }}
+          >
+            <Image
+              src={prompt ? assets.arrow_icon : assets.arrow_icon_dull}
+              alt=''
+              className='w-3.5 aspect-square'
+              style={prompt ? { filter: 'invert(1) brightness(0.15)' } : { opacity: 0.4 }}
+            />
           </button>
         </div>
       </div>
